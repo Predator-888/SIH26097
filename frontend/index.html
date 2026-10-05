@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM-AJAY AI Voice Assistant | Livelihood Mapping & NSQF Skilling (SIH 26097)</title>
+  <meta name="description" content="AI-driven voice assistant for PM-AJAY livelihood mapping and NSQF-aligned skilling recommendations supporting Ahirani and Telugu dialects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-dark">
+  <!-- Top Accessibility & Scheme Utility Banner -->
+  <div class="gov-topbar">
+    <div class="gov-topbar-container">
+      <div class="gov-topbar-left">
+        <span class="flag-icon">🇮🇳</span>
+        <span class="gov-text">Government of India | Ministry of Social Justice and Empowerment (MoSJE)</span>
+      </div>
+      <div class="gov-topbar-right">
+        <div class="accessibility-tools">
+          <button id="btnToggleContrast" class="acc-btn" title="Toggle High Contrast Mode (GIGW / WCAG 2.1 AAA)">
+            <span class="acc-icon">🌓</span> <span class="acc-label">High Contrast</span>
+          </button>
+          <div class="text-scaler" title="Adjust Text Size">
+            <button id="btnTextDec" class="scale-btn" aria-label="Decrease text size">A-</button>
+            <button id="btnTextReset" class="scale-btn active" aria-label="Reset text size">A</button>
+            <button id="btnTextInc" class="scale-btn" aria-label="Increase text size">A+</button>
+          </div>
+          <div class="cadence-selector" title="Assistant Speech Speed Cadence">
+            <label for="audioCadenceSelect">Cadence:</label>
+            <select id="audioCadenceSelect">
+              <option value="0.9" selected>0.9x (Rural Pacing)</option>
+              <option value="1.0">1.0x (Standard)</option>
+              <option value="1.15">1.15x (Fast)</option>
+            </select>
+          </div>
+          <div class="voice-persona-selector" title="Change Voice Persona Sound">
+            <label for="spokespersonSelect">🗣️ Voice:</label>
+            <select id="spokespersonSelect">
+              <option value="asha" selected>👩 आशा (Asha - Empathetic Female)</option>
+              <option value="vikram">👨 विक्रम (Vikram - Calm Male Counselor)</option>
+              <option value="kavita">👩‍🏫 कविता (Kavita - Melodious Voice)</option>
+              <option value="anand">👨‍💼 आनंद (Anand - Youth Advisor)</option>
+            </select>
+            <button id="btnTestVoice" class="acc-btn test-voice-btn" title="Listen to Spokesperson Voice Sample">
+              <span>🔊</span> Test Sound
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Application Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="gov-brand">
+        <div class="emblem-wrapper">
+          <span class="gov-flag-stripe stripe-saffron"></span>
+          <span class="gov-flag-stripe stripe-white"></span>
+          <span class="gov-flag-stripe stripe-green"></span>
+        </div>
+        <div class="brand-text">
+          <span class="sub-dept">PM-AJAY • Grant-in-Aid (GIA) Component</span>
+          <h1 class="main-title">AI Voice Assistant <span>Livelihood & Skilling</span></h1>
+          <div class="scheme-badges-row">
+            <span class="scheme-badge">SIH 2026 | ID 26097</span>
+            <span class="badge-accent">Dialect-Aware NLU</span>
+            <span class="badge-dpdp">DPDP Act 2023 Compliant</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-selector">
+          <label for="languageSelect">🗣️ बोली / భాష (Dialect):</label>
+          <div class="select-wrapper">
+            <select id="languageSelect">
+              <option value="ahr-IN" selected>अहिराणी - Ahirani (धुळे / जळगाव)</option>
+              <option value="te-IN">తెలుగు - Telugu (గుంటూరు / వరంగల్)</option>
+              <option value="mr-IN">मराठी - Marathi (ग्रामीण महाराष्ट्र)</option>
+              <option value="hi-IN">हिन्दी - Hindi (उत्तर भारत)</option>
+            </select>
+          </div>
+        </div>
+
+        <nav class="mode-tabs" role="tablist">
+          <button class="tab-btn active" id="tabKiosk" data-mode="kiosk" role="tab" aria-selected="true">
+            <span class="tab-icon">🏛️</span> CSC Kiosk
+          </button>
+          <button class="tab-btn" id="tabWhatsapp" data-mode="whatsapp" role="tab" aria-selected="false">
+            <span class="tab-icon">💬</span> WhatsApp Bot
+          </button>
+          <button class="tab-btn" id="tabIvr" data-mode="ivr" role="tab" aria-selected="false">
+            <span class="tab-icon">📞</span> IVR Phone
+          </button>
+          <button class="tab-btn" id="tabCatalog" data-mode="catalog" role="tab" aria-selected="false">
+            <span class="tab-icon">📚</span> NSQF Catalog
+          </button>
+          <button class="tab-btn" id="tabAdmin" data-mode="admin" role="tab" aria-selected="false">
+            <span class="tab-icon">📊</span> DWO Admin Hub
+          </button>
+          <button class="tab-btn" id="tabMobile" data-mode="mobile" role="tab" aria-selected="false">
+            <span class="tab-icon">📱</span> Mobile App
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Multi-View Layout -->
+  <main class="main-layout">
+    
+    <!-- ========================================== -->
+    <!-- 1. CSC KIOSK VIEW                          -->
+    <!-- ========================================== -->
+    <section id="kioskView" class="view-panel active">
+      <div class="kiosk-container">
+        <!-- Left Column: Voice Assistant Visualizer & Controls -->
+        <div class="interaction-card">
+          <div class="card-header">
+            <div class="persona-indicator">
+              <div class="pulse-indicator online"></div>
+              <div>
+                <h3 id="assistantName">PM-AJAY सहाय्यक (Assistant)</h3>
+                <span id="currentDialectLabel" class="dialect-pill ahr">अहिराणी बोली (धुळे / जळगाव)</span>
+              </div>
+            </div>
+            <div class="asr-quality-badge" title="Digital India Bhashini Speech Recognition Pipeline">
+              <span class="badge-dot"></span> Bhashini ASR: <strong>98.4%</strong>
+            </div>
+          </div>
+
+          <!-- Spokesperson Voice Sound Switcher -->
+          <div class="voice-sound-bar">
+            <span class="vs-label">🎙️ Spokesperson Voice:</span>
+            <div class="vs-options">
+              <button class="vs-btn active" data-voice="asha" title="Warm & Empathetic Female Voice">
+                <span class="vs-icon">👩</span> आशा (Asha)
+              </button>
+              <button class="vs-btn" data-voice="vikram" title="Deep & Calm Male Rural Counselor">
+                <span class="vs-icon">👨</span> विक्रम (Vikram)
+              </button>
+              <button class="vs-btn" data-voice="kavita" title="Clear Melodious Female Voice">
+                <span class="vs-icon">👩‍🏫</span> कविता (Kavita)
+              </button>
+              <button class="vs-btn" data-voice="anand" title="Energetic Youth Advisor">
+                <span class="vs-icon">👨‍💼</span> आनंद (Anand)
+              </button>
+            </div>
+            <button id="btnQuickTestVoice" class="vs-test-btn" title="Click to listen to sample voice sound">
+              <span>🔊</span> Test Sound
+            </button>
+          </div>
+
+          <!-- Hero Orb & Soundwave Frequency Visualizer -->
+          <div class="visualizer-container" id="visualizerContainer">
+            <div class="ambient-glow"></div>
+            <div class="glow-orb" id="glowOrb">
+              <div class="inner-core">
+                <span class="orb-icon" id="orbIcon">🎙️</span>
+              </div>
+            </div>
+            <div class="sound-wave-bars" id="soundWaves">
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+            </div>
+            <div class="status-ticker" id="statusTicker">
+              सुरू करण्यासाठी खालील माईक बटण दाबा (Tap microphone to begin conversation)
+            </div>
+          </div>
+
+          <!-- Action Controls Bar -->
+          <div class="action-controls">
+            <button class="mic-btn" id="micBtn" aria-label="Start Voice Recording">
+              <span class="mic-inner-icon">🎤</span>
+              <span class="mic-label" id="micLabel">माईक सुरू करा (Speak Now)</span>
+            </button>
+            <button class="replay-btn" id="replayAudioBtn" title="Replay Assistant Voice" disabled>
+              <span>🔊</span> पुन्हा ऐका (Replay)
+            </button>
+          </div>
+
+          <!-- Quick Persona Auto-Simulation for Live Jury Demonstration -->
+          <div class="demo-helpers">
+            <div class="helper-header">
+              <span class="helper-label">⚡ Live Jury Quick Simulation (One-Click Flows):</span>
+              <span class="badge-offline">Standalone Mock Active</span>
+            </div>
+            <div class="persona-chips">
+              <button class="chip-btn" id="btnSimulateRamesh" title="Cotton Farming & Solar Pump Technician in Dhule">
+                <span class="chip-avatar">👨‍🌾</span>
+                <div class="chip-meta">
+                  <strong>रमेश पाटील (Ramesh Patil)</strong>
+                  <small>Ahirani • Dhule • Class 8th Pass • Cotton & Solar</small>
+                </div>
+              </button>
+              <button class="chip-btn" id="btnSimulateLakshmi" title="Traditional Handloom Weaver & Spice Processing in Guntur">
+                <span class="chip-avatar">👩‍🎨</span>
+                <div class="chip-meta">
+                  <strong>లక్ష్మీ దేవి (Lakshmi Devi)</strong>
+                  <small>Telugu • Guntur • Class 10th Pass • Handloom & Spices</small>
+                </div>
+              </button>
+              <button class="chip-btn" id="btnSimulateAniket" title="Banana Fiber & Agro Tech Artisan in Jalgaon">
+                <span class="chip-avatar">🧑‍🔧</span>
+                <div class="chip-meta">
+                  <strong>अनिकेत जाधव (Aniket Jadhav)</strong>
+                  <small>Marathi • Jalgaon • Class 10th • Banana Fiber Craft</small>
+                </div>
+              </button>
+              <button class="chip-btn chip-reset" id="btnResetSession" title="Reset Session and Clear State">
+                <span>🔄</span> <strong>नवीन सत्र सुरू करा (Reset Conversation)</strong>
+              </button>
+            </div>
+          </div>
+
+          <!-- Real-Time AI Skill Profiler Card (Dynamic Extraction Scorecard) -->
+          <div class="profiler-card">
+            <div class="profiler-head">
+              <span class="profiler-title">🧠 Real-Time AI Skill Profiling Scorecard</span>
+              <span class="consent-pill" id="dpdpConsentPill">🛡️ DPDP 2023: Consented</span>
+            </div>
+            <div class="profiler-grid">
+              <div class="profile-stat-box">
+                <span class="stat-lbl">District / LGD</span>
+                <strong class="stat-val" id="profDistrict">Dhule (472)</strong>
+              </div>
+              <div class="profile-stat-box">
+                <span class="stat-lbl">Education</span>
+                <strong class="stat-val" id="profEducation">Class 8th Pass</strong>
+              </div>
+              <div class="profile-stat-box">
+                <span class="stat-lbl">Family Occupation</span>
+                <strong class="stat-val" id="profTrade">Cotton & Agri Labor</strong>
+              </div>
+              <div class="profile-stat-box">
+                <span class="stat-lbl">Mobility Radius</span>
+                <strong class="stat-val" id="profMobility">10 km (Avadhan)</strong>
+              </div>
+            </div>
+            <!-- Equation Breakdown Visualizer -->
+            <div class="equation-container">
+              <div class="eq-header">
+                <span class="eq-formula">Suitability Score = 0.35·S_asp + 0.25·S_elig + 0.20·S_dist + 0.20·S_dsdp</span>
+                <span class="eq-total" id="eqTotalScore">94%</span>
+              </div>
+              <div class="score-bars-row">
+                <div class="score-bar-item" title="Aspiration Semantic Cosine Match (0.35)">
+                  <div class="score-bar-fill fill-asp" style="width: 95%;"></div>
+                  <span>Aspiration (95%)</span>
+                </div>
+                <div class="score-bar-item" title="Academic Prerequisite Eligibility (0.25)">
+                  <div class="score-bar-fill fill-elig" style="width: 100%;"></div>
+                  <span>Eligibility (100%)</span>
+                </div>
+                <div class="score-bar-item" title="Distance Decay e^(-λd) (0.20)">
+                  <div class="score-bar-fill fill-dist" style="width: 90%;"></div>
+                  <span>Mobility (90%)</span>
+                </div>
+                <div class="score-bar-item" title="District Economic Demand DSDP (0.20)">
+                  <div class="score-bar-fill fill-dsdp" style="width: 92%;"></div>
+                  <span>DSDP Demand (92%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Text Fallback Input Bar -->
+          <div class="text-fallback-bar">
+            <input type="text" id="manualTextInput" placeholder="किंवा येथे टाईप करा (Or type verbal response in local dialect)...">
+            <button id="sendTextBtn" class="send-btn">पाठवा (Send)</button>
+          </div>
+        </div>
+
+        <!-- Right Column: Conversation Stream & Recommended NSQF Pathways -->
+        <div class="dialogue-panel">
+          <div class="panel-header">
+            <div class="header-left">
+              <h3>संभाषण आणि शिफारसी (Dialogue & Recommendations)</h3>
+              <span class="session-tag" id="sessionDisplayTag">Session: Connecting...</span>
+            </div>
+            <div class="header-right">
+              <button class="btn-clear-chat" id="btnClearChat" title="Clear Chat Dialogue">🗑️ Clear</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Chat Stream -->
+          <div class="chat-stream" id="chatStream">
+            <!-- Messages populated dynamically -->
+          </div>
+
+          <!-- NSQF Recommendations Card Container -->
+          <div class="recommendations-container" id="recommendationsContainer" style="display: none;">
+            <div class="rec-header">
+              <div class="rec-header-left">
+                <span class="badge-nsqf">NSQF Aligned</span>
+                <span class="badge-pmajay">PM-AJAY GIA Sponsored</span>
+                <h4>तुमच्यासाठी शिफारस केलेले कोर्सेस (Recommended Pathways)</h4>
+              </div>
+              <span class="rec-count" id="recCountBadge">3 Pathways Matched</span>
+            </div>
+            <div class="rec-grid" id="recGrid">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. WHATSAPP BOT SIMULATOR VIEW             -->
+    <!-- ========================================== -->
+    <section id="whatsappView" class="view-panel">
+      <div class="simulator-layout">
+        <!-- Phone Device Mockup -->
+        <div class="phone-frame whatsapp-frame">
+          <div class="phone-top-speaker"></div>
+          <div class="phone-notch"></div>
+          
+          <div class="whatsapp-statusbar">
+            <span class="phone-time" id="phoneTime">10:42</span>
+            <div class="status-icons">
+              <span>📶 4G</span>
+              <span>🔋 94%</span>
+            </div>
+          </div>
+
+          <div class="whatsapp-header">
+            <div class="wa-contact">
+              <div class="wa-avatar">
+                <span class="wa-emblem">🇮🇳</span>
+              </div>
+              <div class="wa-info">
+                <div class="wa-name">
+                  PM-AJAY Livelihood Assistant
+                  <span class="wa-verified-badge" title="Official Verified Government Business Account">✓</span>
+                </div>
+                <div class="wa-status">Official Business Account • MoSJE</div>
+              </div>
+            </div>
+            <div class="wa-actions">
+              <span title="Video Call">📹</span>
+              <span title="Voice Call">📞</span>
+              <span title="Menu">⋮</span>
+            </div>
+          </div>
+
+          <div class="wa-chat-window" id="waChatWindow">
+            <div class="wa-system-message">
+              🔒 Messages and voice notes are end-to-end encrypted. Voice consent logged under DPDP Act 2023.
+            </div>
+            <!-- Dynamic WhatsApp bubbles -->
+          </div>
+
+          <div class="wa-input-bar">
+            <button class="wa-btn" id="waAttachBtn" title="Attach Document / Location">📎</button>
+            <input type="text" id="waTextInput" placeholder="Type or record voice note in Ahirani/Telugu...">
+            <button class="wa-mic-btn" id="waMicBtn" title="Hold or Click to Send Voice Note">🎙️</button>
+          </div>
+        </div>
+
+        <!-- Simulator Control & Architecture Notes -->
+        <div class="simulator-info-card">
+          <div class="sim-badge">Meta WhatsApp Business API Gateway</div>
+          <h3>📱 WhatsApp Voice-Bot Channel Architecture</h3>
+          <p>
+            Specially designed for rural youth and smartphone novices who struggle with text forms but are comfortable sending WhatsApp voice notes.
+          </p>
+
+          <div class="sim-features-grid">
+            <div class="feat-box">
+              <span class="feat-icon">🎙️</span>
+              <div>
+                <strong>Opus .ogg Audio Ingestion</strong>
+                <p>Accepts inbound voice notes, extracts waveform, and feeds Bhashini ASR.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">⚡</span>
+              <div>
+                <strong>Interactive Buttons & Lists</strong>
+                <p>Delivers WhatsApp interactive cards for one-tap course enrollment.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🗣️</span>
+              <div>
+                <strong>Dialect Speech Replies</strong>
+                <p>Replies with synthesized natural voice notes in Ahirani or Telugu (0.9x speed).</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🛡️</span>
+              <div>
+                <strong>DPDP Consent Management</strong>
+                <p>Automatic verification timestamp recorded before profiling begins.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-actions-group">
+            <h4>Quick Simulation Scenarios:</h4>
+            <div class="scenario-btn-row">
+              <button class="action-card-btn" id="waQuickSimBtn">
+                <span>⚡</span> Simulate Ahirani Voice Note Flow (Ramesh Patil)
+              </button>
+              <button class="action-card-btn btn-secondary" id="waTeluguSimBtn">
+                <span>⚡</span> Simulate Telugu Voice Note Flow (Lakshmi Devi)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. IVR TELEPHONY SIMULATOR VIEW            -->
+    <!-- ========================================== -->
+    <section id="ivrView" class="view-panel">
+      <div class="simulator-layout">
+        <!-- Feature Phone Frame -->
+        <div class="phone-frame ivr-frame">
+          <div class="phone-top-speaker"></div>
+          
+          <div class="ivr-screen">
+            <div class="ivr-network-bar">
+              <span>BSNL 2G / GSM</span>
+              <span class="battery-ico">🔋 82%</span>
+            </div>
+            <div class="ivr-call-status" id="ivrCallStatus">Call In Progress</div>
+            <div class="ivr-number-display">Toll-Free: 1800-11-2097</div>
+            <div class="ivr-timer" id="ivrTimer">00:00</div>
+
+            <div class="ivr-audio-avatar">
+              <div class="ivr-pulse" id="ivrPulseRing"></div>
+              <span class="ivr-avatar-icon">🏛️</span>
+            </div>
+
+            <div class="ivr-transcript-box" id="ivrTranscriptBox">
+              "राम राम! पीएम-अजय योजनेसाठी तुमाले काम-धंद्याची माहिती विचारायला चालस का? हो असल्यास 1 दाबा किंवा बोला."
+            </div>
+          </div>
+
+          <!-- Feature Phone Keypad with DTMF Synthesizer -->
+          <div class="ivr-keypad">
+            <button class="key-btn" data-key="1"><span class="k-num">1</span><span class="k-sub">.,/</span></button>
+            <button class="key-btn" data-key="2"><span class="k-num">2</span><span class="k-sub">ABC</span></button>
+            <button class="key-btn" data-key="3"><span class="k-num">3</span><span class="k-sub">DEF</span></button>
+            <button class="key-btn" data-key="4"><span class="k-num">4</span><span class="k-sub">GHI</span></button>
+            <button class="key-btn" data-key="5"><span class="k-num">5</span><span class="k-sub">JKL</span></button>
+            <button class="key-btn" data-key="6"><span class="k-num">6</span><span class="k-sub">MNO</span></button>
+            <button class="key-btn" data-key="7"><span class="k-num">7</span><span class="k-sub">PQRS</span></button>
+            <button class="key-btn" data-key="8"><span class="k-num">8</span><span class="k-sub">TUV</span></button>
+            <button class="key-btn" data-key="9"><span class="k-num">9</span><span class="k-sub">WXYZ</span></button>
+            <button class="key-btn" data-key="*"><span class="k-num">*</span><span class="k-sub">Tone</span></button>
+            <button class="key-btn" data-key="0"><span class="k-num">0</span><span class="k-sub">+</span></button>
+            <button class="key-btn" data-key="#"><span class="k-num">#</span><span class="k-sub">End</span></button>
+          </div>
+
+          <div class="ivr-call-actions">
+            <button class="call-action-btn dial-btn" id="ivrStartCallBtn">
+              <span>📞</span> Call 1800-PM-AJAY
+            </button>
+            <button class="call-action-btn end-btn" id="ivrEndCallBtn">
+              <span>🔴</span> Hang Up
+            </button>
+          </div>
+        </div>
+
+        <!-- Telephony Architecture & Simulation Notes -->
+        <div class="simulator-info-card">
+          <div class="sim-badge">Exotel / Twilio PSTN Cellular Gateway</div>
+          <h3>☎️ PSTN / Feature Phone IVR Architecture</h3>
+          <p>
+            Connects rural beneficiaries who possess only basic button phones (no touchscreens, no mobile internet). Accessible from any remote village across India.
+          </p>
+
+          <div class="sim-features-grid">
+            <div class="feat-box">
+              <span class="feat-icon">📡</span>
+              <div>
+                <strong>8kHz PCM WebSocket Streaming</strong>
+                <p>Full-duplex low-bandwidth audio chunking optimized for cellular voice.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🔢</span>
+              <div>
+                <strong>DTMF Fallback Navigation</strong>
+                <p>If village background noise exceeds 45dB, seamlessly toggles to keypad prompts.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">⏱️</span>
+              <div>
+                <strong>Sub-2 Second Roundtrip Latency</strong>
+                <p>Pre-cached audio prompt snippets ensure conversation feels natural and alive.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🤝</span>
+              <div>
+                <strong>Toll-Free Government Cost Zero</strong>
+                <p>100% free for the caller; charges absorbed by PM-AJAY GIA budget.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-actions-group">
+            <h4>Live Interactive Actions:</h4>
+            <div class="scenario-btn-row">
+              <button class="action-card-btn" id="ivrSimulateCallBtn">
+                <span>⚡</span> Connect Live Toll-Free Call (Ahirani Dialogue)
+              </button>
+              <button class="action-card-btn btn-secondary" id="ivrTeluguCallBtn">
+                <span>⚡</span> Connect Live Toll-Free Call (Telugu Dialogue)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. NSQF SCHEME CATALOG EXPLORER (NEW!)     -->
+    <!-- ========================================== -->
+    <section id="catalogView" class="view-panel">
+      <div class="catalog-container">
+        <div class="catalog-top-header">
+          <div>
+            <span class="scheme-badge">Skill India • PM-AJAY GIA Component</span>
+            <h2>National Skills Qualifications Framework (NSQF) Catalog</h2>
+            <p>Accredited vocational qualification packs with Grant-in-Aid (GIA) toolkit subsidies and PMKK training centers.</p>
+          </div>
+          <div class="catalog-search-bar">
+            <input type="text" id="catalogSearchInput" placeholder="Search by trade name, QP code, or keyword (e.g. cotton, solar, handloom)...">
+          </div>
+        </div>
+
+        <!-- Filter Chips Bar -->
+        <div class="catalog-filter-bar">
+          <div class="filter-group">
+            <span class="filter-lbl">Sector:</span>
+            <button class="cat-filter-btn active" data-filter="sector" data-val="ALL">All Sectors</button>
+            <button class="cat-filter-btn" data-filter="sector" data-val="Agriculture & Rural Processing">🌾 Agriculture</button>
+            <button class="cat-filter-btn" data-filter="sector" data-val="Green Jobs & Renewable Energy">☀️ Green Jobs</button>
+            <button class="cat-filter-btn" data-filter="sector" data-val="Apparel, Made-Ups & Home Furnishing">🧵 Textiles</button>
+            <button class="cat-filter-btn" data-filter="sector" data-val="Food Processing">🌶️ Food Processing</button>
+            <button class="cat-filter-btn" data-filter="sector" data-val="Animal Husbandry & Dairy">🐄 Dairy</button>
+            <button class="cat-filter-btn" data-filter="sector" data-val="Handicrafts and Carpet">🧺 Handicrafts</button>
+          </div>
+          <div class="filter-group">
+            <span class="filter-lbl">Modality:</span>
+            <button class="cat-filter-btn active" data-filter="modality" data-val="ALL">All</button>
+            <button class="cat-filter-btn" data-filter="modality" data-val="SELF">Self-Employment</button>
+            <button class="cat-filter-btn" data-filter="modality" data-val="WAGE">Wage-Employment</button>
+          </div>
+        </div>
+
+        <!-- Catalog Cards Grid -->
+        <div class="catalog-grid" id="catalogGrid">
+          <!-- Dynamically populated from ApiService.nsqfPacks -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. DWO ADMIN & SIDH HUB VIEW               -->
+    <!-- ========================================== -->
+    <section id="adminView" class="view-panel">
+      <div class="admin-dashboard-container">
+        <!-- Metric Overview Cards -->
+        <div class="admin-top-stats">
+          <div class="stat-card">
+            <span class="stat-icon">👥</span>
+            <div class="stat-meta">
+              <span class="stat-number" id="statBeneficiaries">1,425</span>
+              <span class="stat-title">Beneficiaries Counseled</span>
+            </div>
+            <span class="stat-trend trend-up">↑ +14% this month</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🎯</span>
+            <div class="stat-meta">
+              <span class="stat-number" id="statEnrollments">896</span>
+              <span class="stat-title">Pre-Enrolled to NSQF</span>
+            </div>
+            <span class="stat-trend trend-up">↑ 62.8% Conversion</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">⚡</span>
+            <div class="stat-meta">
+              <span class="stat-number" id="statSuitability">91.4%</span>
+              <span class="stat-title">Average Suitability Match</span>
+            </div>
+            <span class="stat-trend trend-up">Mathematical Fit</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🛡️</span>
+            <div class="stat-meta">
+              <span class="stat-number" id="statConsent">98.9%</span>
+              <span class="stat-title">DPDP Voice Consent Rate</span>
+            </div>
+            <span class="stat-trend trend-up">Legally Verified</span>
+          </div>
+        </div>
+
+        <div class="admin-grid-layout">
+          <!-- Recent Pre-Enrollment Queue -->
+          <div class="admin-table-card">
+            <div class="card-head">
+              <div class="head-info">
+                <h3>Pre-Enrollments Queue (Skill India Digital Hub - SIDH Pipeline)</h3>
+                <p>Verified voice counseling profiles pending batch allocation to PMKK training centers.</p>
+              </div>
+              <button class="sync-btn" id="btnSyncSidh">
+                <span>🔄</span> Forward All to SIDH
+              </button>
+            </div>
+
+            <div class="table-filters-row">
+              <input type="text" id="queueSearchInput" placeholder="Filter by candidate name, district, or phone...">
+              <select id="queueStatusSelect">
+                <option value="ALL">All Statuses</option>
+                <option value="FORWARDED_TO_SIDH">Forwarded to SIDH</option>
+                <option value="BATCH_ENROLLED">Batch Enrolled</option>
+                <option value="PENDING_VERIFICATION">Pending Verification</option>
+              </select>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Candidate</th>
+                    <th>Language / Location</th>
+                    <th>Selected NSQF Trade</th>
+                    <th>Training Center</th>
+                    <th>Match %</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="enrollmentsTableBody">
+                  <!-- Dynamically rendered -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- District Economic Demand Side Panel -->
+          <div class="admin-side-card">
+            <div class="side-card-head">
+              <h3>District Skill Development Plans (DSDP)</h3>
+              <span class="badge-accent">Market Viability Index</span>
+            </div>
+            <div class="district-list" id="districtListContainer">
+              <!-- Dynamically populated from ApiService.districtDemand -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. MOBILE APPLICATION INTERFACE (PWA)      -->
+    <!-- ========================================== -->
+    <section id="mobileView" class="view-panel">
+      <div class="mobile-showcase-layout">
+        <!-- Smartphone Device Mockup -->
+        <div class="mobile-phone-wrapper">
+          <div class="mobile-phone-device" id="mobilePhoneDevice">
+            <!-- Hardware Punch-hole Camera & Speaker -->
+            <div class="mob-notch-container">
+              <div class="mob-camera-punch"></div>
+              <div class="mob-earpiece"></div>
+            </div>
+
+            <!-- Mobile Status Bar -->
+            <div class="mob-status-bar">
+              <span class="mob-time" id="mobTime">09:41</span>
+              <div class="mob-status-icons">
+                <span class="mob-net" id="mobNetIndicator">5G</span>
+                <span>📶</span>
+                <span class="mob-battery">94% ⚡</span>
+              </div>
+            </div>
+
+            <!-- Mobile App Top Bar -->
+            <div class="mob-app-header">
+              <div class="mob-header-brand">
+                <span class="mob-flag-emblem">🇮🇳</span>
+                <div>
+                  <div class="mob-app-title">PM-AJAY <span>Mobile</span></div>
+                  <div class="mob-app-sub">MoSJE • Aspirational Skilling</div>
+                </div>
+              </div>
+              <div class="mob-header-actions">
+                <span class="mob-offline-badge online" id="mobSyncPill" title="Local PWA Cache Synchronized">
+                  <span class="sync-dot"></span> Synced
+                </span>
+                <button class="mob-lang-pill" id="btnMobLangToggle" title="Toggle Mobile Dialect">
+                  🗣️ <span id="mobLangLabel">अहिराणी</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Mobile Viewport Screens Container -->
+            <div class="mob-viewport" id="mobViewport">
+              
+              <!-- SCREEN 1: HOME DASHBOARD -->
+              <div class="mob-screen active" id="mobScreenHome">
+                <!-- Welcome Banner -->
+                <div class="mob-user-card">
+                  <div class="mob-avatar">👨‍🌾</div>
+                  <div>
+                    <h4 id="mobGreetingName">राम राम, रमेश पाटील!</h4>
+                    <span class="mob-user-loc">📍 अवधान गाव, धुळे (महाराष्ट्र)</span>
+                  </div>
+                </div>
+
+                <!-- Hero Voice Counselor Action Card -->
+                <div class="mob-hero-voice-card" id="btnMobStartVoiceHero">
+                  <div class="mob-voice-card-content">
+                    <span class="mob-voice-tag">🎙️ AI Voice Counselor</span>
+                    <h3>आपल्या स्थानिक भाषेत बोला</h3>
+                    <p>कोणताही फॉर्म न भरता फक्त आवाजाने मोफत ट्रेनिंग व नोकरी शोधा.</p>
+                    <button class="mob-hero-btn">
+                      <span>🎤</span> संभाषण सुरू करा (Start Voice) →
+                    </button>
+                  </div>
+                  <div class="mob-hero-orb-mini">
+                    <div class="mini-orb-pulse"></div>
+                    <span>🎙️</span>
+                  </div>
+                </div>
+
+                <!-- Scheme GIA Benefits 4-Grid -->
+                <div class="mob-section-title">
+                  <h5>PM-AJAY अनुदान योजना फायदे (GIA Benefits)</h5>
+                </div>
+                <div class="mob-benefits-grid">
+                  <div class="mob-benefit-box">
+                    <span class="b-ico">💰</span>
+                    <strong>दरमहा ₹1,500</strong>
+                    <small>थेट बँक खात्यात (DBT)</small>
+                  </div>
+                  <div class="mob-benefit-box">
+                    <span class="b-ico">🧰</span>
+                    <strong>मोफत टूलकिट</strong>
+                    <small>व्यवसायासाठी संपूर्ण किट</small>
+                  </div>
+                  <div class="mob-benefit-box">
+                    <span class="b-ico">📜</span>
+                    <strong>NSQF प्रमाणपत्र</strong>
+                    <small>भारत सरकार मान्यताप्राप्त</small>
+                  </div>
+                  <div class="mob-benefit-box">
+                    <span class="b-ico">🤝</span>
+                    <strong>मुद्रा लोन सहाय्य</strong>
+                    <small>स्वयंरोजगार सुरू करण्यासाठी</small>
+                  </div>
+                </div>
+
+                <!-- Nearby PMKK Training Center -->
+                <div class="mob-section-title">
+                  <h5>जवळचे कौशल्य केंद्र (Nearby PMKK)</h5>
+                </div>
+                <div class="mob-center-card">
+                  <div class="center-card-head">
+                    <strong>PM-AJAY Kaushal Kendra (PMKK), Dhule</strong>
+                    <span class="dist-badge">4.8 km</span>
+                  </div>
+                  <p>Near MIDC Avadhan, Dhule • मोफत बॅच सुरू</p>
+                  <div class="center-trades-tags">
+                    <span class="mini-tag">🌾 कापूस जिनिंग</span>
+                    <span class="mini-tag">☀️ सौर कृषी पंप</span>
+                    <span class="mini-tag">🐄 शेळीपालन</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCREEN 2: VOICE AI COUNSELOR (FULL-SCREEN VOICE INTERFACE) -->
+              <div class="mob-screen" id="mobScreenVoice">
+                <div class="mob-voice-counselor-top">
+                  <div class="mob-voice-persona-chip">
+                    <span class="p-dot"></span>
+                    <strong id="mobActivePersonaTitle">सहाय्यक: आशा (Empathetic Voice)</strong>
+                  </div>
+                  <span class="dpdp-tiny">🛡️ DPDP 2023 Consented</span>
+                </div>
+
+                <!-- Central Voice Orb Visualizer -->
+                <div class="mob-voice-orb-stage">
+                  <div class="mob-glow-orb" id="mobGlowOrb">
+                    <div class="mob-orb-core">
+                      <span id="mobOrbIcon">🎙️</span>
+                    </div>
+                  </div>
+                  <div class="mob-waves" id="mobWaves">
+                    <span class="mob-wave"></span>
+                    <span class="mob-wave"></span>
+                    <span class="mob-wave"></span>
+                    <span class="mob-wave"></span>
+                    <span class="mob-wave"></span>
+                    <span class="mob-wave"></span>
+                  </div>
+                  <div class="mob-voice-status" id="mobVoiceStatus">
+                    माईक बटण दाबा आणि बोला (Tap mic to speak)
+                  </div>
+                </div>
+
+                <!-- Mobile Dialogue Stream -->
+                <div class="mob-chat-stream" id="mobChatStream">
+                  <div class="mob-bubble assistant">
+                    राम राम! मी गव्हर्मेंटच्या पीएम-अजय योजनेची सहाय्यक आशा बोलस. तुमाले मोफत काम-धंद्याचं आणि ट्रेनिंगचं माहिती विचारायला तुमची संमती चालस का?
+                  </div>
+                </div>
+
+                <!-- Quick Suggested Voice Replies -->
+                <div class="mob-quick-replies" id="mobQuickReplies">
+                  <button class="mob-reply-btn" data-reply="हो, मला माहिती सांगा">"हो, मला सांगा"</button>
+                  <button class="mob-reply-btn" data-reply="मी धुळे अवधान गावचा आहे">"धुळे अवधान गाव"</button>
+                  <button class="mob-reply-btn" data-reply="मी आठवी पास आहे">"८ वी पास आहे"</button>
+                  <button class="mob-reply-btn" data-reply="कापूस आणि सोलर पंप काम">"सोलर व कापूस काम"</button>
+                </div>
+
+                <!-- Bottom Voice Action Bar -->
+                <div class="mob-voice-action-bar">
+                  <button class="mob-mic-fab" id="mobMicBtn" aria-label="Tap to speak">
+                    <span class="fab-icon">🎤</span>
+                  </button>
+                  <button class="mob-audio-replay-btn" id="mobReplayBtn" title="Replay Assistant Audio">
+                    🔊
+                  </button>
+                </div>
+              </div>
+
+              <!-- SCREEN 3: NSQF COURSES EXPLORER -->
+              <div class="mob-screen" id="mobScreenCourses">
+                <div class="mob-screen-head">
+                  <h4>उपलब्ध NSQF कोर्सेस</h4>
+                  <small>PM-AJAY GIA मोफत प्रशिक्षण</small>
+                </div>
+
+                <div class="mob-search-input-wrap">
+                  <input type="text" id="mobCourseSearch" placeholder="कोर्स किंवा काम शोधा (e.g. कापूस, सोलर, शेळी)...">
+                </div>
+
+                <div class="mob-cat-chips">
+                  <button class="m-chip active" data-mfilter="ALL">सर्व (All)</button>
+                  <button class="m-chip" data-mfilter="Agriculture">🌾 शेती</button>
+                  <button class="m-chip" data-mfilter="Green Jobs">☀️ सोलर</button>
+                  <button class="m-chip" data-mfilter="Apparel">🧵 वस्त्रोद्योग</button>
+                  <button class="m-chip" data-mfilter="Food">🌶️ फूड</button>
+                </div>
+
+                <div class="mob-courses-list" id="mobCoursesList">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+
+              <!-- SCREEN 4: DIGITAL SMART CARD (BENEFICIARY PASS) -->
+              <div class="mob-screen" id="mobScreenCard">
+                <div class="mob-screen-head">
+                  <h4>PM-AJAY डिजिटल लाभार्थी कार्ड</h4>
+                  <small>Government of India Digital Livelihood Pass</small>
+                </div>
+
+                <!-- Holographic Digital ID Card -->
+                <div class="mob-smart-card" id="mobSmartCardElem">
+                  <div class="card-chip-row">
+                    <div class="card-emv-chip"></div>
+                    <span class="card-flag">🇮🇳 MoSJE</span>
+                  </div>
+                  
+                  <div class="card-main-content">
+                    <div class="card-photo-avatar">👨‍🌾</div>
+                    <div class="card-candidate-info">
+                      <h4 id="cardName">Ramesh Patil</h4>
+                      <div class="card-id-text" id="cardAppId">ID: PMAJAY-2026-MH-472-8819</div>
+                      <div class="card-loc-text" id="cardLocation">Dhule (Maharashtra) • Class 8th</div>
+                    </div>
+                  </div>
+
+                  <div class="card-trade-box">
+                    <span class="trade-lbl">Allocated NSQF Trade & Center:</span>
+                    <strong id="cardTradeTitle">Cotton Ginning & Processing (AGR/Q0108)</strong>
+                    <small id="cardCenterTitle">PMKK Avadhan, Dhule (Level 4 • 360 Hrs)</small>
+                  </div>
+
+                  <div class="card-bottom-row">
+                    <div class="card-qr-box">
+                      <svg viewBox="0 0 100 100" width="46" height="46">
+                        <rect width="100" height="100" fill="#ffffff" />
+                        <rect x="10" y="10" width="25" height="25" fill="#000000" />
+                        <rect x="15" y="15" width="15" height="15" fill="#ffffff" />
+                        <rect x="65" y="10" width="25" height="25" fill="#000000" />
+                        <rect x="70" y="15" width="15" height="15" fill="#ffffff" />
+                        <rect x="10" y="65" width="25" height="25" fill="#000000" />
+                        <rect x="15" y="70" width="15" height="15" fill="#ffffff" />
+                        <rect x="45" y="15" width="10" height="20" fill="#000000" />
+                        <rect x="40" y="65" width="20" height="15" fill="#000000" />
+                        <rect x="70" y="75" width="15" height="15" fill="#000000" />
+                      </svg>
+                    </div>
+                    <div class="card-stamps">
+                      <span class="stamp-pill">✅ SIDH Verified</span>
+                      <span class="stamp-pill">🛡️ DPDP 2023 Valid</span>
+                      <small class="stamp-date">Date: 2026-09-29</small>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Actions -->
+                <div class="mob-card-actions">
+                  <button class="mob-action-card-btn" id="btnSaveMobCard">
+                    <span>💾</span> फोनमध्ये सेव्ह करा (Save Offline Pass)
+                  </button>
+                  <button class="mob-action-card-btn btn-sec" id="btnShareMobCard">
+                    <span>📲</span> WhatsApp वर पाठवा (Share)
+                  </button>
+                </div>
+              </div>
+
+              <!-- SCREEN 5: SETTINGS & OFFLINE PWA -->
+              <div class="mob-screen" id="mobScreenSettings">
+                <div class="mob-screen-head">
+                  <h4>अ‍ॅप सेटिंग्ज (App Settings)</h4>
+                  <small>Voice, Language & Low-Bandwidth Mode</small>
+                </div>
+
+                <div class="mob-settings-list">
+                  <div class="setting-item">
+                    <div class="setting-text">
+                      <strong>🎙️ सहाय्यक आवाज (Spokesperson Voice)</strong>
+                      <small>आशा (Empathetic) किंवा विक्रम (Counselor)</small>
+                    </div>
+                    <select id="mobVoiceSelect" class="mob-select">
+                      <option value="asha" selected>आशा (Asha - Female)</option>
+                      <option value="vikram">विक्रम (Vikram - Male)</option>
+                      <option value="kavita">कविता (Kavita - Melodious)</option>
+                      <option value="anand">आनंद (Anand - Youth)</option>
+                    </select>
+                  </div>
+
+                  <div class="setting-item">
+                    <div class="setting-text">
+                      <strong>⚡ आवाज गती (Speech Cadence)</strong>
+                      <small>ग्रामीण स्पष्टतेसाठी धीमी गती</small>
+                    </div>
+                    <select id="mobCadenceSelect" class="mob-select">
+                      <option value="0.9" selected>0.9x (धीमी गती / Slow)</option>
+                      <option value="1.0">1.0x (सामान्य / Normal)</option>
+                      <option value="1.15">1.15x (जलद / Fast)</option>
+                    </select>
+                  </div>
+
+                  <div class="setting-item">
+                    <div class="setting-text">
+                      <strong>📶 2G डेटा सेव्हर (Low-Bandwidth Mode)</strong>
+                      <small>कमी इंटरनेट असलेल्या गावांमध्ये ऑफलाइन कॅशे वापरा</small>
+                    </div>
+                    <input type="checkbox" id="chkLowBandwidth" checked>
+                  </div>
+
+                  <div class="setting-item">
+                    <div class="setting-text">
+                      <strong>🛡️ DPDP 2023 ऑडिओ संमती</strong>
+                      <small>डिव्हाइसवर स्थानिकपणे एनक्रिप्टेड</small>
+                    </div>
+                    <span class="badge-accent">VERIFIED</span>
+                  </div>
+
+                  <div class="setting-item">
+                    <div class="setting-text">
+                      <strong>☎️ PM-AJAY टोल-फ्री हेल्पलाइन</strong>
+                      <small>मदत मिळवण्यासाठी कॉल करा</small>
+                    </div>
+                    <a href="tel:1800112097" class="helpline-link">1800-11-2097</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Mobile Bottom Navigation Bar (5 Primary Tabs) -->
+            <nav class="mob-bottom-nav">
+              <button class="mob-nav-item active" data-target="mobScreenHome">
+                <span class="nav-ico">🏠</span>
+                <span class="nav-lbl">गृह (Home)</span>
+              </button>
+              <button class="mob-nav-item" data-target="mobScreenVoice">
+                <span class="nav-ico">🎙️</span>
+                <span class="nav-lbl">मार्गदर्शक (Voice)</span>
+              </button>
+              <button class="mob-nav-item" data-target="mobScreenCourses">
+                <span class="nav-ico">📚</span>
+                <span class="nav-lbl">कोर्सेस (Courses)</span>
+              </button>
+              <button class="mob-nav-item" data-target="mobScreenCard">
+                <span class="nav-ico">🪪</span>
+                <span class="nav-lbl">स्मार्ट कार्ड (Pass)</span>
+              </button>
+              <button class="mob-nav-item" data-target="mobScreenSettings">
+                <span class="nav-ico">⚙️</span>
+                <span class="nav-lbl">सेटिंग्ज</span>
+              </button>
+            </nav>
+
+          </div>
+        </div>
+
+        <!-- Mobile Architecture & Jury Demonstration Control Panel -->
+        <div class="mobile-showcase-panel">
+          <div class="sim-badge">Progressive Web App (PWA) • Android & iOS Ready</div>
+          <h3>📱 PM-AJAY Beneficiary Mobile Application</h3>
+          <p>
+            Designed for rural smartphone owners and CSC ground counselors. Runs with zero friction over poor 2G/3G connectivity with full client-side voice caching.
+          </p>
+
+          <div class="sim-features-grid">
+            <div class="feat-box">
+              <span class="feat-icon">⚡</span>
+              <div>
+                <strong>Low-Bandwidth (2G) PWA</strong>
+                <p>Service worker caches NSQF catalogs & training centers offline for instant loads.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🎙️</span>
+              <div>
+                <strong>One-Tap Voice Navigation</strong>
+                <p>Eliminates complex navigation forms; speaks natively in Ahirani, Telugu, and Marathi.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🪪</span>
+              <div>
+                <strong>Digital Holographic ID Card</strong>
+                <p>Generates an instant QR-verified offline training admission pass for PMKK centers.</p>
+              </div>
+            </div>
+            <div class="feat-box">
+              <span class="feat-icon">🛡️</span>
+              <div>
+                <strong>On-Device Voice Privacy</strong>
+                <p>DPDP Act 2023 compliance with transparent voice data purge controls.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-actions-group">
+            <h4>Quick Demonstration Scenarios:</h4>
+            <div class="scenario-btn-row">
+              <button class="action-card-btn" id="btnSimMobVoiceFlow">
+                <span>⚡</span> 1. Run Mobile Voice Counselor Flow (Ramesh Patil)
+              </button>
+              <button class="action-card-btn btn-secondary" id="btnSimMobSmartCard">
+                <span>🪪</span> 2. View Digital Beneficiary Smart Card
+              </button>
+              <button class="action-card-btn btn-secondary" id="btnSimMobOfflineMode">
+                <span>📶</span> 3. Toggle Rural Offline Mode Simulation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MODAL 1: PRE-ENROLLMENT ACKNOWLEDGMENT     -->
+  <!-- ========================================== -->
+  <div class="modal-backdrop" id="enrollmentModal" style="display: none;">
+    <div class="slip-modal-container">
+      <div class="slip-modal-header">
+        <div class="slip-gov-brand">
+          <span class="slip-emblem">🇮🇳</span>
+          <div>
+            <h4>Government of India • Ministry of Social Justice and Empowerment</h4>
+            <span class="slip-scheme">Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="btnCloseEnrollModal" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="slip-body" id="printableSlipArea">
+        <div class="slip-title-banner">
+          <h3>PROVISIONAL NSQF PRE-ENROLLMENT ACKNOWLEDGEMENT SLIP</h3>
+          <span class="slip-id-badge" id="slipAppId">APP-ID: PMAJAY-2026-MH-472-8819</span>
+        </div>
+
+        <div class="slip-details-grid">
+          <div class="slip-item">
+            <label>Beneficiary Name:</label>
+            <strong id="slipCandidateName">Ramesh Patil</strong>
+          </div>
+          <div class="slip-item">
+            <label>Mobile Number:</label>
+            <strong id="slipPhoneNumber">+91-98765-43210</strong>
+          </div>
+          <div class="slip-item">
+            <label>District / State:</label>
+            <strong id="slipDistrict">Dhule (Maharashtra)</strong>
+          </div>
+          <div class="slip-item">
+            <label>Village / Gram Panchayat:</label>
+            <strong id="slipVillage">Avadhan Gram Panchayat</strong>
+          </div>
+          <div class="slip-item">
+            <label>Allocated NSQF Trade:</label>
+            <strong id="slipTradeName">Cotton Ginning & Processing Technician (AGR/Q0108)</strong>
+          </div>
+          <div class="slip-item">
+            <label>NSQF Level & Duration:</label>
+            <strong id="slipNsqfLevel">Level 4 • 360 Hours</strong>
+          </div>
+          <div class="slip-item full-width">
+            <label>Allotted PMKK Training Center:</label>
+            <strong id="slipCenterName">PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule</strong>
+            <span class="slip-subtext" id="slipCenterAddress">Near MIDC Avadhan, Dhule, Maharashtra 424006</span>
+          </div>
+          <div class="slip-item">
+            <label>DBT Monthly Stipend:</label>
+            <strong class="text-green" id="slipStipend">₹1,500/Month (Direct Benefit Transfer)</strong>
+          </div>
+          <div class="slip-item">
+            <label>Tool Kit Grant:</label>
+            <strong class="text-green" id="slipToolkit">Free Standard Tool Kit (Govt GIA)</strong>
+          </div>
+        </div>
+
+        <!-- Verification & DPDP Stamp -->
+        <div class="slip-verification-row">
+          <div class="slip-qr-box">
+            <!-- Simulated QR SVG -->
+            <svg class="qr-code-svg" viewBox="0 0 100 100" width="80" height="80">
+              <rect width="100" height="100" fill="#ffffff" />
+              <rect x="10" y="10" width="25" height="25" fill="#000000" />
+              <rect x="15" y="15" width="15" height="15" fill="#ffffff" />
+              <rect x="19" y="19" width="7" height="7" fill="#000000" />
+              <rect x="65" y="10" width="25" height="25" fill="#000000" />
+              <rect x="70" y="15" width="15" height="15" fill="#ffffff" />
+              <rect x="74" y="19" width="7" height="7" fill="#000000" />
+              <rect x="10" y="65" width="25" height="25" fill="#000000" />
+              <rect x="15" y="70" width="15" height="15" fill="#ffffff" />
+              <rect x="19" y="74" width="7" height="7" fill="#000000" />
+              <rect x="45" y="15" width="10" height="10" fill="#000000" />
+              <rect x="45" y="35" width="10" height="20" fill="#000000" />
+              <rect x="65" y="45" width="15" height="10" fill="#000000" />
+              <rect x="40" y="65" width="20" height="15" fill="#000000" />
+              <rect x="70" y="75" width="15" height="15" fill="#000000" />
+            </svg>
+            <span class="qr-label">SIDH QR Verified</span>
+          </div>
+          <div class="slip-audit-meta">
+            <div><strong>DPDP Act 2023 Consent:</strong> Verified Voice Timestamp</div>
+            <div><strong>Channel:</strong> CSC Kiosk AI Voice Session</div>
+            <div><strong>Forwarded to:</strong> Skill India Digital Hub (SIDH) Central API</div>
+            <div><strong>Reporting Instructions:</strong> Report with Aadhaar Card at the training center on the batch start date.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slip-modal-actions">
+        <button class="slip-btn btn-print" id="btnPrintSlip">
+          <span>🖨️</span> Print / Save PDF Slip
+        </button>
+        <button class="slip-btn btn-whatsapp" id="btnShareWa">
+          <span>📲</span> Send Copy to WhatsApp & SMS
+        </button>
+        <button class="slip-btn btn-close" id="btnCloseSlipBtn">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL 2: COURSE SYLLABUS & ROADMAP DRAWER  -->
+  <!-- ========================================== -->
+  <div class="modal-backdrop" id="syllabusModal" style="display: none;">
+    <div class="syllabus-drawer">
+      <div class="drawer-header">
+        <div>
+          <span class="badge-nsqf" id="sylSector">Agriculture & Rural Processing</span>
+          <h3 id="sylTitle">Cotton Ginning & Processing Technician</h3>
+          <span class="syl-code" id="sylQpCode">QP Code: AGR/Q0108 • NSQF Level 4</span>
+        </div>
+        <button class="modal-close-btn" id="btnCloseSyllabus">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="drawer-stat-bar">
+          <div class="d-stat">
+            <span class="d-lbl">Total Hours</span>
+            <strong class="d-val" id="sylHours">360 Hours</strong>
+          </div>
+          <div class="d-stat">
+            <span class="d-lbl">Entry Eligibility</span>
+            <strong class="d-val" id="sylEntry">Class 8th Pass</strong>
+          </div>
+          <div class="d-stat">
+            <span class="d-lbl">Modality</span>
+            <strong class="d-val" id="sylModality">Self-Employment</strong>
+          </div>
+          <div class="d-stat">
+            <span class="d-lbl">GIA Monthly Stipend</span>
+            <strong class="d-val text-green" id="sylStipend">₹1,500/mo</strong>
+          </div>
+        </div>
+
+        <div class="syl-section">
+          <h4>Course Overview & Economic Relevance:</h4>
+          <p id="sylDesc">Detailed trade overview here.</p>
+        </div>
+
+        <div class="syl-section">
+          <h4>National Occupational Standards (NOS) Syllabus Modules:</h4>
+          <ul class="syl-modules-list" id="sylModulesList">
+            <!-- Dynamic Modules -->
+          </ul>
+        </div>
+
+        <div class="syl-section">
+          <h4>Certified PMKK Training Centers Offering this Course:</h4>
+          <div class="syl-centers-list" id="sylCentersList">
+            <!-- Dynamic Centers -->
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <button class="action-card-btn" id="sylEnrollBtn">
+          ✅ Pre-Enroll in this NSQF Qualification Pack
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <span>Built for <strong>Smart India Hackathon 2026</strong> | Problem Statement 26097 | MoSJE</span>
+        <span class="footer-sep">•</span>
+        <span>Aspirational Districts Livelihood Enablement</span>
+      </div>
+      <div class="footer-right">
+        <span class="api-status" id="apiStatusBadge">Backend Status: Connecting...</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/audio_recorder.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

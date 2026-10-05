@@ -1,0 +1,62 @@
+[
+  {
+    "center_id": "TC_MH_DHL_01",
+    "center_name": "PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule",
+    "district": "Dhule",
+    "state": "Maharashtra",
+    "district_lgd_code": 472,
+    "latitude": 20.9042,
+    "longitude": 74.7749,
+    "offered_qp_codes": ["AGR/Q0108", "ELE/Q5901", "AGR/Q4101", "CON/Q0103"],
+    "contact_phone": "+91-2562-284901",
+    "address": "Near MIDC Avadhan, Dhule, Maharashtra"
+  },
+  {
+    "center_id": "TC_MH_JLG_02",
+    "center_name": "Khandesh Agro & Banana Craft Skill Hub, Jalgaon",
+    "district": "Jalgaon",
+    "state": "Maharashtra",
+    "district_lgd_code": 473,
+    "latitude": 21.0077,
+    "longitude": 75.5626,
+    "offered_qp_codes": ["HCS/Q7301", "AGR/Q0108", "ELE/Q5901"],
+    "contact_phone": "+91-257-2234502",
+    "address": "Agricultural College Road, Jalgaon, Maharashtra"
+  },
+  {
+    "center_id": "TC_MH_NDB_03",
+    "center_name": "Aspirational District Tribal & Rural Skilling Institute, Nandurbar",
+    "district": "Nandurbar",
+    "state": "Maharashtra",
+    "district_lgd_code": 471,
+    "latitude": 21.3732,
+    "longitude": 74.2407,
+    "offered_qp_codes": ["ELE/Q5901", "AGR/Q4101", "CON/Q0103"],
+    "contact_phone": "+91-2564-210034",
+    "address": "Near District Court, Nandurbar, Maharashtra"
+  },
+  {
+    "center_id": "TC_AP_GNT_01",
+    "center_name": "Skill India Training Hub & Spice Processing Center, Guntur",
+    "district": "Guntur",
+    "state": "Andhra Pradesh",
+    "district_lgd_code": 505,
+    "latitude": 16.3067,
+    "longitude": 80.4365,
+    "offered_qp_codes": ["FIC/Q7001", "AMH/Q1001", "AGR/Q1101"],
+    "contact_phone": "+91-863-2345678",
+    "address": "Chilli Yard Road, Guntur, Andhra Pradesh"
+  },
+  {
+    "center_id": "TC_TG_WRG_02",
+    "center_name": "Kakatiya Handloom & Rural Vocational Institute, Warangal",
+    "district": "Warangal",
+    "state": "Telangana",
+    "district_lgd_code": 535,
+    "latitude": 17.9689,
+    "longitude": 79.5941,
+    "offered_qp_codes": ["AMH/Q1001", "ELE/Q5901", "AGR/Q4101"],
+    "contact_phone": "+91-870-2456789",
+    "address": "Weavers Colony, Warangal, Telangana"
+  }
+]

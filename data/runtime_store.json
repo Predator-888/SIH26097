@@ -1,0 +1,191 @@
+{
+  "sessions": {
+    "sess_a52b4780458e": {
+      "session_id": "sess_a52b4780458e",
+      "beneficiary_id": "eaa57e0f-74c2-41e6-a86e-b76f4775fce3",
+      "channel": "KIOSK",
+      "preferred_language": "ahr-IN",
+      "phone_hash": "f3a47ce5ce3d4ca8",
+      "dialogue_state": "RECOMMENDATION_DELIVERY",
+      "consent_granted": true,
+      "transcript_history": [
+        {
+          "turn": 1,
+          "state_before": "GREETING_AND_CONSENT",
+          "user_transcript": "हो, सांगा",
+          "extracted": {},
+          "state_after": "IDENTITY_AND_LOCATION"
+        },
+        {
+          "turn": 2,
+          "state_before": "IDENTITY_AND_LOCATION",
+          "user_transcript": "मी धुळे गावचा आहे",
+          "extracted": {
+            "district_name": "Dhule",
+            "district_lgd_code": 472,
+            "village": "मी धुळे गावचा आहे"
+          },
+          "state_after": "EDUCATION_AND_BACKGROUND"
+        },
+        {
+          "turn": 3,
+          "state_before": "EDUCATION_AND_BACKGROUND",
+          "user_transcript": "मी आठवी शिकलो आहे",
+          "extracted": {
+            "education_level": "मी आठवी शिकलो आहे"
+          },
+          "state_after": "TRADITIONAL_AND_INFORMAL_SKILLS"
+        },
+        {
+          "turn": 4,
+          "state_before": "TRADITIONAL_AND_INFORMAL_SKILLS",
+          "user_transcript": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे",
+          "extracted": {
+            "traditional_trade": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे",
+            "declared_interest": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे"
+          },
+          "state_after": "MOBILITY_AND_MODALITY"
+        },
+        {
+          "turn": 5,
+          "state_before": "MOBILITY_AND_MODALITY",
+          "user_transcript": "मला स्वतःचा व्यवसाय सुरू करायचा आहे, दहा किलोमीटरच्या आत",
+          "extracted": {
+            "preferred_modality": "SELF_EMPLOYMENT",
+            "mobility_radius_km": 15
+          },
+          "state_after": "RECOMMENDATION_DELIVERY"
+        }
+      ],
+      "extracted_entities": {
+        "district_name": "Dhule",
+        "district_lgd_code": 472,
+        "village": "मी धुळे गावचा आहे",
+        "education_level": "मी आठवी शिकलो आहे",
+        "traditional_trade": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे",
+        "mobility_radius_km": 15,
+        "preferred_modality": "SELF_EMPLOYMENT",
+        "declared_interest": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे"
+      },
+      "recommendations": [
+        {
+          "qp_code": "AGR/Q0108",
+          "trade_name": "Cotton Ginning & Processing Technician",
+          "trade_name_localized": "कापूस जिनिंग आणि प्रक्रिया कारागीर",
+          "nsqf_level": 4,
+          "sector_name": "Agriculture & Rural Processing",
+          "suitability_score": 0.63,
+          "justification": "तुमना शेती/कामाच्या अनुभवाशी जुळतंस. PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule मध्ये मोफत ट्रेनिंग उपलब्ध आहे. 63% अनुकूल.",
+          "training_center": {
+            "center_id": "TC_MH_DHL_01",
+            "center_name": "PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule",
+            "district": "Dhule",
+            "state": "Maharashtra",
+            "district_lgd_code": 472,
+            "latitude": 20.9042,
+            "longitude": 74.7749,
+            "offered_qp_codes": [
+              "AGR/Q0108",
+              "ELE/Q5901",
+              "AGR/Q4101",
+              "CON/Q0103"
+            ],
+            "contact_phone": "+91-2562-284901",
+            "address": "Near MIDC Avadhan, Dhule, Maharashtra"
+          }
+        },
+        {
+          "qp_code": "ELE/Q5901",
+          "trade_name": "Solar Agriculture Pump Technician",
+          "trade_name_localized": "सौर कृषी पंप तंत्रज्ञ",
+          "nsqf_level": 4,
+          "sector_name": "Green Jobs & Renewable Energy",
+          "suitability_score": 0.62,
+          "justification": "तुमना शेती/कामाच्या अनुभवाशी जुळतंस. PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule मध्ये मोफत ट्रेनिंग उपलब्ध आहे. 62% अनुकूल.",
+          "training_center": {
+            "center_id": "TC_MH_DHL_01",
+            "center_name": "PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule",
+            "district": "Dhule",
+            "state": "Maharashtra",
+            "district_lgd_code": 472,
+            "latitude": 20.9042,
+            "longitude": 74.7749,
+            "offered_qp_codes": [
+              "AGR/Q0108",
+              "ELE/Q5901",
+              "AGR/Q4101",
+              "CON/Q0103"
+            ],
+            "contact_phone": "+91-2562-284901",
+            "address": "Near MIDC Avadhan, Dhule, Maharashtra"
+          }
+        },
+        {
+          "qp_code": "AGR/Q4101",
+          "trade_name": "Small Livestock & Dairy Farm Manager",
+          "trade_name_localized": "शेळीपालन आणि दुग्ध व्यवसाय व्यवस्थापक",
+          "nsqf_level": 3,
+          "sector_name": "Animal Husbandry & Dairy",
+          "suitability_score": 0.61,
+          "justification": "तुमना शेती/कामाच्या अनुभवाशी जुळतंस. PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule मध्ये मोफत ट्रेनिंग उपलब्ध आहे. 61% अनुकूल.",
+          "training_center": {
+            "center_id": "TC_MH_DHL_01",
+            "center_name": "PM-AJAY Pradhan Mantri Kaushal Kendra (PMKK), Dhule",
+            "district": "Dhule",
+            "state": "Maharashtra",
+            "district_lgd_code": 472,
+            "latitude": 20.9042,
+            "longitude": 74.7749,
+            "offered_qp_codes": [
+              "AGR/Q0108",
+              "ELE/Q5901",
+              "AGR/Q4101",
+              "CON/Q0103"
+            ],
+            "contact_phone": "+91-2562-284901",
+            "address": "Near MIDC Avadhan, Dhule, Maharashtra"
+          }
+        }
+      ],
+      "created_at": "2026-09-28T16:53:13.796290+00:00",
+      "updated_at": "2026-09-28T16:53:13.824816+00:00"
+    }
+  },
+  "beneficiaries": {
+    "eaa57e0f-74c2-41e6-a86e-b76f4775fce3": {
+      "beneficiary_id": "eaa57e0f-74c2-41e6-a86e-b76f4775fce3",
+      "primary_language": "ahr-IN",
+      "district_lgd_code": 472,
+      "district_name": "Dhule",
+      "education_level": "मी आठवी शिकलो आहे",
+      "traditional_trade": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे",
+      "mobility_radius_km": 15,
+      "preferred_modality": "SELF_EMPLOYMENT",
+      "declared_interest": "घरात कापूस शेती करतो, मला सोलर पंप आणि शेतीचं काम शिकायचं आहे",
+      "updated_at": "2026-09-28T16:53:13.809113+00:00"
+    }
+  },
+  "enrollments": [
+    {
+      "beneficiary_id": "sess_a52b4780458e",
+      "beneficiary_name": "Ramesh Patil",
+      "phone_hash": "f3a47ce5ce3d4ca8",
+      "selected_qp_code": "AGR/Q0108",
+      "training_center_id": "TC_MH_DHL_01",
+      "session_id": "sess_a52b4780458e",
+      "enrollment_id": "enr_b1edbe1e",
+      "enrolled_at": "2026-09-28T16:53:13.840888+00:00",
+      "sidh_sync_status": "FORWARDED_TO_SIDH"
+    },
+    {
+      "beneficiary_id": "test_ben_99",
+      "beneficiary_name": "Ramesh Patil",
+      "phone_hash": "hash_123",
+      "selected_qp_code": "AGR/Q0108",
+      "training_center_id": "TC_MH_DHL_01",
+      "enrollment_id": "enr_498bb44d",
+      "enrolled_at": "2026-09-28T16:53:31.935656+00:00",
+      "sidh_sync_status": "FORWARDED_TO_SIDH"
+    }
+  ]
+}

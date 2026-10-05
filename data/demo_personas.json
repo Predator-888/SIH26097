@@ -1,0 +1,48 @@
+{
+  "personas": [
+    {
+      "persona_id": "persona_ahirani_ramesh",
+      "name": "Ramesh Patil",
+      "language": "ahr-IN",
+      "language_name": "Ahirani (Maharashtra)",
+      "district": "Dhule",
+      "district_lgd_code": 472,
+      "village": "Avadhan Gram Panchayat",
+      "education_level": "Class 8th Pass",
+      "traditional_family_trade": "Cotton farming & agricultural labor",
+      "mobility_radius_km": 10,
+      "preferred_modality": "SELF_EMPLOYMENT",
+      "declared_interest": "कापूस शेती आणि सोलर पंप किंवा शेतीचं काम शिकायचं आहे",
+      "sample_voice_prompts": [
+        "राम राम, व्हय, मला माहिती सांगा",
+        "मी धुळे तालुका, अवधान गावचा आहे",
+        "मी आठवी पास आहे",
+        "आमच्या घरी शेतात कापूस वेचणी आणि मजुरीचं काम करतो, मला सोलर पंप किंवा शेतीचं नवीन काम शिकायचं आहे",
+        "मला स्वतःचा व्यवसाय करायचा आहे, दहा किलोमीटरच्या आत चालंल"
+      ],
+      "expected_top_recommendations": ["AGR/Q0108", "ELE/Q5901", "AGR/Q4101"]
+    },
+    {
+      "persona_id": "persona_telugu_lakshmi",
+      "name": "Lakshmi Devi",
+      "language": "te-IN",
+      "language_name": "Telugu (Andhra Pradesh)",
+      "district": "Guntur",
+      "district_lgd_code": 505,
+      "village": "Mangalagiri Rural",
+      "education_level": "Class 10th Pass",
+      "traditional_family_trade": "Handloom weaving & spice drying",
+      "mobility_radius_km": 20,
+      "preferred_modality": "HYBRID",
+      "declared_interest": "నేత పని, చేనేత మగ్గం మరియు మిర్చి ప్రాసెసింగ్ నేర్చుకోవాలని ఉంది",
+      "sample_voice_prompts": [
+        "నమస్కారం, అవును నేను వివరాలు చెప్పడానికి సిద్ధంగా ఉన్నాను",
+        "మాది గుంటూరు జిల్లా మంగళగిరి గ్రామం",
+        "నేను పదో తరగతి పూర్తి చేశాను",
+        "మా ఇంట్లో చేనేత మగ్గం పని చేస్తాము, మిరపకాయల ఎండబెట్టే పని కూడా తెలుసు",
+        "నాకు ఇరవై కిలోమీటర్ల లోపు ట్రైనింగ్ ఉంటే మంచిది, స్వయం ఉపాధి లేదా పని కావాలి"
+      ],
+      "expected_top_recommendations": ["AMH/Q1001", "FIC/Q7001", "ELE/Q5901"]
+    }
+  ]
+}

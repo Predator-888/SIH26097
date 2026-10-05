@@ -1,0 +1,20 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.db
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.next/
+
+# IDE & OS
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

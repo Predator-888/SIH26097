@@ -1,0 +1,58 @@
+{
+  "472": {
+    "district_name": "Dhule",
+    "state": "Maharashtra",
+    "high_demand_sectors": ["Agriculture & Rural Processing", "Green Jobs & Renewable Energy", "Animal Husbandry & Dairy"],
+    "priority_qp_weights": {
+      "AGR/Q0108": 0.95,
+      "ELE/Q5901": 0.90,
+      "AGR/Q4101": 0.85,
+      "HCS/Q7301": 0.70,
+      "CON/Q0103": 0.75
+    }
+  },
+  "473": {
+    "district_name": "Jalgaon",
+    "state": "Maharashtra",
+    "high_demand_sectors": ["Handicrafts and Carpet", "Agriculture & Rural Processing", "Green Jobs & Renewable Energy"],
+    "priority_qp_weights": {
+      "HCS/Q7301": 0.98,
+      "AGR/Q0108": 0.92,
+      "ELE/Q5901": 0.88,
+      "AGR/Q4101": 0.70
+    }
+  },
+  "471": {
+    "district_name": "Nandurbar",
+    "state": "Maharashtra",
+    "high_demand_sectors": ["Green Jobs & Renewable Energy", "Animal Husbandry & Dairy", "Construction"],
+    "priority_qp_weights": {
+      "ELE/Q5901": 0.95,
+      "AGR/Q4101": 0.90,
+      "CON/Q0103": 0.85,
+      "HCS/Q7301": 0.75
+    }
+  },
+  "505": {
+    "district_name": "Guntur",
+    "state": "Andhra Pradesh",
+    "high_demand_sectors": ["Food Processing", "Agriculture Technology", "Apparel, Made-Ups & Home Furnishing"],
+    "priority_qp_weights": {
+      "FIC/Q7001": 0.98,
+      "AGR/Q1101": 0.90,
+      "AMH/Q1001": 0.82,
+      "ELE/Q5901": 0.75
+    }
+  },
+  "535": {
+    "district_name": "Warangal",
+    "state": "Telangana",
+    "high_demand_sectors": ["Apparel, Made-Ups & Home Furnishing", "Green Jobs & Renewable Energy", "Animal Husbandry & Dairy"],
+    "priority_qp_weights": {
+      "AMH/Q1001": 0.96,
+      "ELE/Q5901": 0.88,
+      "AGR/Q4101": 0.82,
+      "CON/Q0103": 0.70
+    }
+  }
+}

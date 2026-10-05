@@ -1,0 +1,98 @@
+[
+  {
+    "qp_code": "AGR/Q0108",
+    "trade_name": "Cotton Ginning & Processing Technician",
+    "trade_name_ahirani": "कापूस जिनिंग आणि प्रक्रिया कारागीर",
+    "trade_name_telugu": "పత్తి జిన్నింగ్ & ప్రాసెసింగ్ టెక్నీషియన్",
+    "sector_name": "Agriculture & Rural Processing",
+    "nsqf_level": 4,
+    "entry_qualification_minimum": "Class 8th",
+    "is_self_employment_oriented": true,
+    "description": "Operation of modern cotton ginning machines, quality grading, seed separation, and fiber sorting. Crucial for Khandesh cotton belt.",
+    "keywords": ["cotton", "ginning", "kapus", "farming", "patti", "fiber", "कापूस", "पత్తి"]
+  },
+  {
+    "qp_code": "HCS/Q7301",
+    "trade_name": "Banana Fiber Products & Agro-Craft Artisan",
+    "trade_name_ahirani": "केळीच्या धाग्यापासून वस्तू बनवणारा कारागीर",
+    "trade_name_telugu": "అరటి నార ఉత్పత్తుల తయారీ కళాకారుడు",
+    "sector_name": "Handicrafts and Carpet",
+    "nsqf_level": 3,
+    "entry_qualification_minimum": "Ability to read and write",
+    "is_self_employment_oriented": true,
+    "description": "Extracting fiber from banana pseudostem waste, rope making, handicraft baskets, and eco-friendly packaging.",
+    "keywords": ["banana", "fiber", "craft", "waste to wealth", "keli", "arati", "हस्तकला", "చేతివృత్తులు"]
+  },
+  {
+    "qp_code": "ELE/Q5901",
+    "trade_name": "Solar Agriculture Pump Technician",
+    "trade_name_ahirani": "सौर कृषी पंप तंत्रज्ञ",
+    "trade_name_telugu": "సోలార్ అగ్రికల్చర్ పంప్ టెక్నీషియన్",
+    "sector_name": "Green Jobs & Renewable Energy",
+    "nsqf_level": 4,
+    "entry_qualification_minimum": "Class 8th with vocational aptitude",
+    "is_self_employment_oriented": true,
+    "description": "Installation, testing, and maintenance of solar photovoltaic pumping systems for rural irrigation.",
+    "keywords": ["solar", "pump", "electricity", "irrigation", "motor", "सौर", "సోలార్", "విద్యుత్"]
+  },
+  {
+    "qp_code": "AGR/Q4101",
+    "trade_name": "Small Livestock & Dairy Farm Manager",
+    "trade_name_ahirani": "शेळीपालन आणि दुग्ध व्यवसाय व्यवस्थापक",
+    "trade_name_telugu": "పాడి పరిశ్రమ & పశుపోషణ సహాయకుడు",
+    "sector_name": "Animal Husbandry & Dairy",
+    "nsqf_level": 3,
+    "entry_qualification_minimum": "Class 5th",
+    "is_self_employment_oriented": true,
+    "description": "Scientific rearing of cattle and goats, feed management, milk production, and veterinary hygiene.",
+    "keywords": ["dairy", "goat", "livestock", "milk", "dudh", "sheli", "పాడి", "మేకలు", "పాలు"]
+  },
+  {
+    "qp_code": "AMH/Q1001",
+    "trade_name": "Handloom Jacquard Weaver & Textile Artisan",
+    "trade_name_ahirani": "हातमाग विणकर",
+    "trade_name_telugu": "చేనేత జకార్డ్ నేత కార్మికుడు",
+    "sector_name": "Apparel, Made-Ups & Home Furnishing",
+    "nsqf_level": 4,
+    "entry_qualification_minimum": "Class 5th or traditional family craft",
+    "is_self_employment_oriented": true,
+    "description": "Warping, jacquard card drafting, handloom setup, and weaving of traditional silk and cotton garments.",
+    "keywords": ["handloom", "weaving", "textile", "sari", "chenetha", "magham", "हातमाग", "చేనేత"]
+  },
+  {
+    "qp_code": "FIC/Q7001",
+    "trade_name": "Chilli & Spice Processing Technician",
+    "trade_name_ahirani": "मिरची आणि मसाला प्रक्रिया कारागीर",
+    "trade_name_telugu": "మిరప మరియు సుగంధ ద్రవ్యాల ప్రాసెసింగ్ నిపుణుడు",
+    "sector_name": "Food Processing",
+    "nsqf_level": 3,
+    "entry_qualification_minimum": "Class 8th",
+    "is_self_employment_oriented": false,
+    "description": "Grading, cleaning, drying, pulverizing, and packaging of red chilli and regional spice blends in Guntur belt.",
+    "keywords": ["chilli", "spice", "food", "mirchi", "masala", "processing", "మిరప", "మసాలా"]
+  },
+  {
+    "qp_code": "AGR/Q1101",
+    "trade_name": "Micro-Irrigation & Drip System Installer",
+    "trade_name_ahirani": "ठिबक सिंचन तंत्रज्ञ",
+    "trade_name_telugu": "సూక్ష్మ సేద్యం & డ్రిప్ ఇరిగేషన్ టెక్నీషియన్",
+    "sector_name": "Agriculture Technology",
+    "nsqf_level": 4,
+    "entry_qualification_minimum": "Class 8th",
+    "is_self_employment_oriented": true,
+    "description": "Laying drip pipes, filters, pressure valves, and maintenance for water-efficient farming.",
+    "keywords": ["drip", "irrigation", "water", "pipe", "thibak", "సేద్యం", "నీటిపారుదల"]
+  },
+  {
+    "qp_code": "CON/Q0103",
+    "trade_name": "Rural Mason & Habitat Infrastructure Builder",
+    "trade_name_ahirani": "ग्रामीण गवंडी कारागीर",
+    "trade_name_telugu": "గ్రామీణ మేస్త్రీ / భవన నిర్మాణ కార్మికుడు",
+    "sector_name": "Construction",
+    "nsqf_level": 3,
+    "entry_qualification_minimum": "Class 5th",
+    "is_self_employment_oriented": false,
+    "description": "Bricklaying, plastering, sanitary soak-pit construction, and durable PM-Awas housing construction.",
+    "keywords": ["mason", "construction", "cement", "building", "gavandi", "మేస్త్రీ", "నిర్మాణం"]
+  }
+]
